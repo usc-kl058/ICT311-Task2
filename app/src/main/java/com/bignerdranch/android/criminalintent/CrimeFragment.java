@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import java.text.DateFormat;
 
 public class CrimeFragment extends Fragment {
 
@@ -20,6 +21,7 @@ public class CrimeFragment extends Fragment {
     private EditText mTitleField;
     private Button mDateButton;
     private CheckBox mSolvedCheckBox;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
