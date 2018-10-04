@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -169,8 +170,8 @@ public class CrimeFragment extends Fragment {
                                 PackageManager.MATCH_DEFAULT_ONLY);
                 for (ResolveInfo activity : cameraActivities) {
                     getActivity().grantUriPermission(activity.activityInfo.packageName,
+                            uri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
                 }
-                uri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
                 startActivityForResult(captureImage, REQUEST_PHOTO);
             }
         });
