@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import java.util.List;
 import java.util.UUID;
@@ -33,6 +34,8 @@ public class CrimePagerActivity extends AppCompatActivity {
         UUID crimeId = (UUID) getIntent()
                 .getSerializableExtra(EXTRA_CRIME_ID);
 
+        Log.d("Test", "The crime id: " + crimeId.toString());
+
         mViewPager = (ViewPager) findViewById(R.id.crime_view_pager);
         mCrimes = CrimeLab.get(this).getCrimes();
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -49,6 +52,7 @@ public class CrimePagerActivity extends AppCompatActivity {
         });
 
         for (int i = 0; i < mCrimes.size(); i++) {
+            Log.d("Test", "ID List: " + mCrimes.get(i).getId().toString());
             if (mCrimes.get(i).getId().equals(crimeId)) {
                 mViewPager.setCurrentItem(i);
                 break; }
