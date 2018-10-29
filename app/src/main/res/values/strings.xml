@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Purchase Receipts</string>
     <string name="crime_title_hint">Enter a title for the receipt.</string> <string name="crime_title_label">Title</string>
-    <string name="crime_details_label">Details</string>
+
     <string name="crime_solved_label">Purchased</string>
     <string name="date_picker_title">Date of receipt:</string>
     <string name="new_crime">New Receipt</string>
@@ -19,6 +19,9 @@
     <string name="crime_report_suspect">the shop is %s.</string>
     <string name="crime_report_subject">Purchase Receipts Report</string>
     <string name="send_report">Send report via</string>
+
+    <string name="crime_details_label">Title</string>
+    <string name="shop_name_label">Shop Name</string>shop_name_label
 
     <plurals name="subtitle_plural">
         <item quantity="one">%1$d receipt</item>
