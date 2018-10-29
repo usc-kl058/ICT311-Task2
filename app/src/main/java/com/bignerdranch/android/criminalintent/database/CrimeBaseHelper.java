@@ -18,6 +18,9 @@ public class CrimeBaseHelper extends SQLiteOpenHelper {
                 " _id integer primary key autoincrement, " +
                 CrimeTable.Cols.UUID + ", " +
                 CrimeTable.Cols.TITLE + ", " +
+                CrimeTable.Cols.SHOPNAME + ", " +
+                CrimeTable.Cols.COMMENT + ", " +
+                CrimeTable.Cols.RECEIPTTITLE + ", " +
                 CrimeTable.Cols.DATE + ", "  +
                 CrimeTable.Cols.SOLVED + ", " +
                 CrimeTable.Cols.SUSPECT +
