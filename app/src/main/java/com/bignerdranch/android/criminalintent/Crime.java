@@ -10,6 +10,9 @@ public class Crime {
     private Date mDate;
     private boolean mSolved;
     private String mSuspect;
+    private String mShopName;
+    private String mReceiptTitle;
+    private String mComments;
 
     public Crime() {
         this(UUID.randomUUID());
@@ -59,4 +62,13 @@ public class Crime {
     public String getPhotoFilename() {
         return "IMG_" + getId().toString() + ".jpg";
     }
+
+    public String getShopName() {return mShopName; }
+    public void setShopName(String mShopName) { this.mShopName = mShopName; }
+
+    public String getReceiptTitle() { return mReceiptTitle; }
+    public void setReceiptTitle(String mReceiptTitle) { this.mReceiptTitle = mReceiptTitle; }
+
+    public String getComments() { return mComments; }
+    public void setComments(String mComments) { this.mComments = mComments; }
 }

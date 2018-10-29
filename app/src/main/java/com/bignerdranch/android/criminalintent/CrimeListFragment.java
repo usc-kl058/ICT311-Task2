@@ -124,6 +124,9 @@ public class CrimeListFragment extends Fragment {
     private class CrimeHolder extends RecyclerView.ViewHolder
             implements View.OnClickListener {
 
+        private TextView mShopNameTextView;
+        private TextView mReceiptTitleTextView;
+        private TextView mCommentsTextView;
         private Crime mCrime;
         private TextView mTitleTextView;
         private TextView mDateTextView;
@@ -132,7 +135,9 @@ public class CrimeListFragment extends Fragment {
         public CrimeHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.list_item_crime, parent, false));
             itemView.setOnClickListener(this);
-
+            mCommentsTextView = (TextView) itemView.findViewById(R.id.comments);
+            mShopNameTextView = (TextView) itemView.findViewById(R.id.shop_name);
+            mReceiptTitleTextView = (TextView) itemView.findViewById(R.id.receipt_title);
             mTitleTextView = (TextView) itemView.findViewById(R.id.crime_title);
             mDateTextView = (TextView) itemView.findViewById(R.id.crime_date);
             mSolvedImageView = (ImageView) itemView.findViewById(R.id.crime_solved);
@@ -142,6 +147,11 @@ public class CrimeListFragment extends Fragment {
             mCrime = crime;
             mTitleTextView.setText(mCrime.getTitle());
             mDateTextView.setText(mCrime.getDate().toString());
+
+            mShopNameTextView.setText(mCrime.getShopName());
+            mReceiptTitleTextView.setText(mCrime.getReceiptTitle());
+            mCommentsTextView.setText(mCrime.getComments());
+
             mSolvedImageView.setVisibility(crime.isSolved() ? View.VISIBLE : View.GONE);
         }
 
