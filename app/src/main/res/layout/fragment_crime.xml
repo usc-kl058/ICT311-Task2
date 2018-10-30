@@ -15,7 +15,8 @@
         android:id="@+id/receipt_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter title for receipt" />
+        android:hint="Enter title for receipt"
+        android:inputType="text" />
 
     <TextView
         style="?android:listSeparatorTextViewStyle"
@@ -27,7 +28,8 @@
         android:id="@+id/shop_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter shop name" />
+        android:hint="Enter shop name"
+        android:inputType="text" />
 
     <TextView
         style="?android:listSeparatorTextViewStyle"
@@ -39,7 +41,8 @@
         android:id="@+id/comments"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter comments" />
+        android:hint="Enter comments"
+        android:inputType="text" />
 
 
     <Button
@@ -87,24 +90,7 @@
                 android:src="@android:drawable/ic_menu_camera"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/crime_title_label"
-                style="?android:listSeparatorTextViewStyle"/>
-            <EditText
-                android:id="@+id/crime_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/crime_title_hint"/>
 
-
-        </LinearLayout>
 
     </LinearLayout>
 
