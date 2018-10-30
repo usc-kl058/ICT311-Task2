@@ -55,20 +55,39 @@ public class Crime {
         mSolved = solved;
     }
 
-    public String getSuspect() { return mSuspect; }
+    public String getSuspect() {
+        return mSuspect;
+    }
 
-    public void setSuspect(String suspect) { mSuspect = suspect; }
+    public void setSuspect(String suspect) {
+        mSuspect = suspect;
+    }
 
     public String getPhotoFilename() {
         return "IMG_" + getId().toString() + ".jpg";
     }
 
-    public String getShopName() {return mShopName; }
-    public void setShopName(String mShopName) { this.mShopName = mShopName; }
+    public String getShopName() {
+        return mShopName;
+    }
 
-    public String getReceiptTitle() { return mReceiptTitle; }
-    public void setReceiptTitle(String mReceiptTitle) { this.mReceiptTitle = mReceiptTitle; }
+    public void setShopName(String mShopName) {
+        this.mShopName = mShopName;
+    }
 
-    public String getComments() { return mComments; }
-    public void setComments(String mComments) { this.mComments = mComments; }
+    public String getReceiptTitle() {
+        return mReceiptTitle;
+    }
+
+    public void setReceiptTitle(String mReceiptTitle) {
+        this.mReceiptTitle = mReceiptTitle;
+    }
+
+    public String getComments() {
+        return mComments;
+    }
+
+    public void setComments(String mComments) {
+        this.mComments = mComments;
+    }
 }

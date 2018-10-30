@@ -22,6 +22,7 @@ public class DatePickerFragment extends DialogFragment {
 
     private static final String ARG_DATE = "date";
     private DatePicker mDatePicker;
+
     public static DatePickerFragment newInstance(Date date) {
         Bundle args = new Bundle();
         args.putSerializable(ARG_DATE, date);
@@ -49,16 +50,16 @@ public class DatePickerFragment extends DialogFragment {
                 .setView(v)
                 .setTitle(R.string.date_picker_title)
                 .setPositiveButton(android.R.string.ok,
-                    new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            int year = mDatePicker.getYear();
-                            int month = mDatePicker.getMonth();
-                            int day = mDatePicker.getDayOfMonth();
-                            Date date = new GregorianCalendar(year, month, day).getTime();
-                            sendResult(Activity.RESULT_OK, date);
-                        }
-                })
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                int year = mDatePicker.getYear();
+                                int month = mDatePicker.getMonth();
+                                int day = mDatePicker.getDayOfMonth();
+                                Date date = new GregorianCalendar(year, month, day).getTime();
+                                sendResult(Activity.RESULT_OK, date);
+                            }
+                        })
                 .create();
     }
 

@@ -28,7 +28,7 @@ public class CrimeLab {
         return sCrimeLab;
     }
 
-    private CrimeLab(Context context){
+    private CrimeLab(Context context) {
         mContext = context.getApplicationContext();
         mDatabase = new CrimeBaseHelper(mContext)
                 .getWritableDatabase();
@@ -58,7 +58,7 @@ public class CrimeLab {
     public Crime getCrime(UUID id) {
         CrimeCursorWrapper cursor = queryCrimes(
                 CrimeDbSchema.CrimeTable.Cols.UUID + " = ?",
-                new String[] { id.toString() }
+                new String[]{id.toString()}
         );
         try {
             if (cursor.getCount() == 0) {
@@ -81,7 +81,7 @@ public class CrimeLab {
         ContentValues values = getContentValues(crime);
         mDatabase.update(CrimeDbSchema.CrimeTable.NAME, values,
                 CrimeDbSchema.CrimeTable.Cols.UUID + " = ?",
-                new String[] { uuidString });
+                new String[]{uuidString});
     }
 
     private CrimeCursorWrapper queryCrimes(String whereClause, String[] whereArgs) {

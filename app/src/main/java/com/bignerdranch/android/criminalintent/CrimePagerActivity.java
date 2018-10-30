@@ -46,6 +46,7 @@ public class CrimePagerActivity extends AppCompatActivity {
                 Crime crime = mCrimes.get(position);
                 return CrimeFragment.newInstance(crime.getId());
             }
+
             @Override
             public int getCount() {
                 return mCrimes.size();
@@ -57,7 +58,8 @@ public class CrimePagerActivity extends AppCompatActivity {
             //Log.d("Test", "ID List: " + mCrimes.get(i).getId().toString());
             if (mCrimes.get(i).getId().equals(crimeId)) {
                 mViewPager.setCurrentItem(i);
-                break; }
+                break;
+            }
         }
     }
 }

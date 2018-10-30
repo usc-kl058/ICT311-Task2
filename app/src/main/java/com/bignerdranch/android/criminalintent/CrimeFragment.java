@@ -43,7 +43,7 @@ public class CrimeFragment extends Fragment {
 
     private static final int REQUEST_DATE = 0;
     private static final int REQUEST_CONTACT = 1;
-    private static final int REQUEST_PHOTO= 2;
+    private static final int REQUEST_PHOTO = 2;
 
     private Crime mCrime;
     private File mPhotoFile;
@@ -95,10 +95,12 @@ public class CrimeFragment extends Fragment {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 // intentionally blank
             }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 mCrime.setReceiptTitle(s.toString());
             }
+
             @Override
             public void afterTextChanged(Editable s) {
                 // intentionally blank
@@ -112,10 +114,12 @@ public class CrimeFragment extends Fragment {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 // intentionally blank
             }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 mCrime.setShopName(s.toString());
             }
+
             @Override
             public void afterTextChanged(Editable s) {
                 // intentionally blank
@@ -129,10 +133,12 @@ public class CrimeFragment extends Fragment {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 // intentionally blank
             }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 mCrime.setComments(s.toString());
             }
+
             @Override
             public void afterTextChanged(Editable s) {
                 // intentionally blank
@@ -147,11 +153,13 @@ public class CrimeFragment extends Fragment {
                     CharSequence s, int start, int count, int after) {
                 // This space intentionally left blank
             }
+
             @Override
             public void onTextChanged(
                     CharSequence s, int start, int before, int count) {
                 mCrime.setTitle(s.toString());
             }
+
             @Override
             public void afterTextChanged(Editable s) {
                 // This one too
@@ -171,7 +179,7 @@ public class CrimeFragment extends Fragment {
             }
         });
 
-        mSolvedCheckBox = (CheckBox)v.findViewById(R.id.crime_solved);
+        mSolvedCheckBox = (CheckBox) v.findViewById(R.id.crime_solved);
         mSolvedCheckBox.setChecked(mCrime.isSolved());
         mSolvedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -243,16 +251,18 @@ public class CrimeFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode != Activity.RESULT_OK) {
-            return; }
+            return;
+        }
         if (requestCode == REQUEST_DATE) {
             Date date = (Date) data
                     .getSerializableExtra(DatePickerFragment.EXTRA_DATE);
             mCrime.setDate(date);
             updateDate();
-        } else if (requestCode == REQUEST_CONTACT && data != null) { Uri contactUri = data.getData();
+        } else if (requestCode == REQUEST_CONTACT && data != null) {
+            Uri contactUri = data.getData();
             // Specify which fields you want your query to return
             // values for
-            String[] queryFields = new String[] {
+            String[] queryFields = new String[]{
                     ContactsContract.Contacts.DISPLAY_NAME
             };
             // Perform your query - the contactUri is like a "where"
@@ -262,7 +272,8 @@ public class CrimeFragment extends Fragment {
             try {
                 // Double-check that you actually got results
                 if (c.getCount() == 0) {
-                    return; }
+                    return;
+                }
                 // Pull out the first column of the first row of data -
                 // that is your suspect's name
                 c.moveToFirst();
@@ -270,7 +281,8 @@ public class CrimeFragment extends Fragment {
                 mCrime.setSuspect(suspect);
                 mSuspectButton.setText(suspect);
             } finally {
-                c.close(); }
+                c.close();
+            }
         } else if (requestCode == REQUEST_PHOTO) {
             Uri uri = FileProvider.getUriForFile(getActivity(),
                     "com.bignerdranch.android.criminalintent.fileprovider",
