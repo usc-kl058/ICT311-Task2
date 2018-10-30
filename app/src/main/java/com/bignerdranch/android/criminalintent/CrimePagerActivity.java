@@ -37,7 +37,7 @@ public class CrimePagerActivity extends AppCompatActivity {
         //Used to find fault.
         //Log.d("Test", "The crime id: " + crimeId.toString());
 
-        mViewPager = (ViewPager) findViewById(R.id.crime_view_pager);
+        mViewPager = findViewById(R.id.crime_view_pager);
         mCrimes = CrimeLab.get(this).getCrimes();
         FragmentManager fragmentManager = getSupportFragmentManager();
         mViewPager.setAdapter(new FragmentStatePagerAdapter(fragmentManager) {

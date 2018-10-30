@@ -88,7 +88,7 @@ public class CrimeFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_crime, container, false);
 
-        mReceiptTitle = (EditText) v.findViewById(R.id.receipt_title);
+        mReceiptTitle = v.findViewById(R.id.receipt_title);
         mReceiptTitle.setText(mCrime.getReceiptTitle());
         mReceiptTitle.addTextChangedListener(new TextWatcher() {
             @Override
@@ -107,7 +107,7 @@ public class CrimeFragment extends Fragment {
             }
         });
 
-        mShopName = (EditText) v.findViewById(R.id.shop_name);
+        mShopName = v.findViewById(R.id.shop_name);
         mShopName.setText(mCrime.getShopName());
         mShopName.addTextChangedListener(new TextWatcher() {
             @Override
@@ -126,7 +126,7 @@ public class CrimeFragment extends Fragment {
             }
         });
 
-        mComments = (EditText) v.findViewById(R.id.comments);
+        mComments = v.findViewById(R.id.comments);
         mComments.setText(mCrime.getComments());
         mComments.addTextChangedListener(new TextWatcher() {
             @Override
@@ -145,7 +145,7 @@ public class CrimeFragment extends Fragment {
             }
         });
 
-        mTitleField = (EditText) v.findViewById(crime_title);
+        mTitleField = v.findViewById(crime_title);
         mTitleField.setText(mCrime.getTitle());
         mTitleField.addTextChangedListener(new TextWatcher() {
             @Override
@@ -166,7 +166,7 @@ public class CrimeFragment extends Fragment {
             }
         });
 
-        mDateButton = (Button) v.findViewById(R.id.crime_date);
+        mDateButton = v.findViewById(R.id.crime_date);
         updateDate();
         mDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -179,7 +179,7 @@ public class CrimeFragment extends Fragment {
             }
         });
 
-        mSolvedCheckBox = (CheckBox) v.findViewById(R.id.crime_solved);
+        mSolvedCheckBox = v.findViewById(R.id.crime_solved);
         mSolvedCheckBox.setChecked(mCrime.isSolved());
         mSolvedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -188,7 +188,7 @@ public class CrimeFragment extends Fragment {
             }
         });
 
-        mReportButton = (Button) v.findViewById(R.id.crime_report);
+        mReportButton = v.findViewById(R.id.crime_report);
         mReportButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent i = new Intent(Intent.ACTION_SEND);
@@ -203,7 +203,7 @@ public class CrimeFragment extends Fragment {
 
         final Intent pickContact = new Intent(Intent.ACTION_PICK,
                 ContactsContract.Contacts.CONTENT_URI);
-        mSuspectButton = (Button) v.findViewById(R.id.crime_suspect);
+        mSuspectButton = v.findViewById(R.id.crime_suspect);
         mSuspectButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startActivityForResult(pickContact, REQUEST_CONTACT);
@@ -219,7 +219,7 @@ public class CrimeFragment extends Fragment {
             mSuspectButton.setEnabled(false);
         }
 
-        mPhotoButton = (ImageButton) v.findViewById(R.id.crime_camera);
+        mPhotoButton = v.findViewById(R.id.crime_camera);
         final Intent captureImage = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         boolean canTakePhoto = mPhotoFile != null &&
                 captureImage.resolveActivity(packageManager) != null;
@@ -242,7 +242,7 @@ public class CrimeFragment extends Fragment {
             }
         });
 
-        mPhotoView = (ImageView) v.findViewById(R.id.crime_photo);
+        mPhotoView = v.findViewById(R.id.crime_photo);
         updatePhotoView();
 
         return v;

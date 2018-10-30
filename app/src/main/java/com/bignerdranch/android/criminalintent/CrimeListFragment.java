@@ -35,7 +35,7 @@ public class CrimeListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_crime_list, container, false);
-        mCrimeRecyclerView = (RecyclerView) view
+        mCrimeRecyclerView = view
                 .findViewById(R.id.crime_recycler_view);
         mCrimeRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
@@ -135,21 +135,20 @@ public class CrimeListFragment extends Fragment {
         public CrimeHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.list_item_crime, parent, false));
             itemView.setOnClickListener(this);
-            mCommentsTextView = (TextView) itemView.findViewById(R.id.comments);
-            mShopNameTextView = (TextView) itemView.findViewById(R.id.shop_name);
-            mReceiptTitleTextView = (TextView) itemView.findViewById(R.id.receipt_title);
-            mTitleTextView = (TextView) itemView.findViewById(R.id.crime_title);
-            mDateTextView = (TextView) itemView.findViewById(R.id.crime_date);
-            mSolvedImageView = (ImageView) itemView.findViewById(R.id.crime_solved);
+            mCommentsTextView = itemView.findViewById(R.id.comments);
+            mShopNameTextView = itemView.findViewById(R.id.shop_name);
+            mReceiptTitleTextView = itemView.findViewById(R.id.receipt_title);
+            mTitleTextView = itemView.findViewById(R.id.crime_title);
+            mDateTextView = itemView.findViewById(R.id.crime_date);
+            mSolvedImageView = itemView.findViewById(R.id.crime_solved);
         }
 
         public void bind(Crime crime) {
             mCrime = crime;
             mTitleTextView.setText(mCrime.getTitle());
             mDateTextView.setText(mCrime.getDate().toString());
-
-            mShopNameTextView.setText(mCrime.getShopName());
             mReceiptTitleTextView.setText(mCrime.getReceiptTitle());
+            mShopNameTextView.setText(mCrime.getShopName());
             mCommentsTextView.setText(mCrime.getComments());
 
             mSolvedImageView.setVisibility(crime.isSolved() ? View.VISIBLE : View.GONE);
