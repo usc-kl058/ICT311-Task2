@@ -145,12 +145,11 @@ public class CrimeListFragment extends Fragment {
 
         public void bind(Crime crime) {
             mCrime = crime;
-            mTitleTextView.setText(mCrime.getTitle());
-            mDateTextView.setText(mCrime.getDate().toString());
             mReceiptTitleTextView.setText(mCrime.getReceiptTitle());
             mShopNameTextView.setText(mCrime.getShopName());
             mCommentsTextView.setText(mCrime.getComments());
-
+            mDateTextView.setText(mCrime.getDate().toString());
+            mTitleTextView.setText(mCrime.getTitle());
             mSolvedImageView.setVisibility(crime.isSolved() ? View.VISIBLE : View.GONE);
         }
 
